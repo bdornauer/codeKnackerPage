@@ -28,5 +28,5 @@ It utilizes Spring Boot with:
  - Apache Maven
  - XHTML, Javascript and CSS
 
-!!!! Just execute  "mvn spring-boot:run" to start the KryptoKnack on your server !!!
+Just execute  "mvn spring-boot:run" to start the KryptoKnack on your server.
 (Maven and Java JDK8 is necessary).
