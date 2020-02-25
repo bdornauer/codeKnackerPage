@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cd76e4cd-2af5-45db-850b-ee1183d4bceb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1XcZkBi4garvWpWzCBNfBY4F1Vb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/content/material" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Benedikt\OneDrive\Studium\Bachelorarbeit\Dornauer_Bachelorprojekt_final\Software\src\main\webapp\content\material" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Benedikt\OneDrive\Studium\Bachelorarbeit\Dornauer_Bachelorprojekt_final\Software\src\main\webapp\content\material" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="[spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="spring-boot:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cd76e4cd-2af5-45db-850b-ee1183d4bceb" name="Default Changelist" comment="" />
+      <created>1581347485077</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581347485077</updated>
+      <workItem from="1581347488521" duration="634000" />
+      <workItem from="1581433431961" duration="28000" />
+      <workItem from="1582574288091" duration="5827000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="446" y="122" key="#Project_Structure" timestamp="1582574325608">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="446" y="122" key="#Project_Structure/0.0.1707.920@0.0.1707.920" timestamp="1582574325608" />
+    <state x="309" y="119" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582574348291">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="309" y="119" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.920@0.0.1707.920" timestamp="1582574348291" />
+    <state x="634" y="219" key="FileChooserDialogImpl" timestamp="1582574346297">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="634" y="219" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1582574346297" />
+    <state width="1663" height="242" key="GridCell.Tab.0.bottom" timestamp="1582649644000">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1663" height="242" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1582649644000" />
+    <state width="1663" height="242" key="GridCell.Tab.0.center" timestamp="1582649644000">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1663" height="242" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1582649644000" />
+    <state width="1663" height="242" key="GridCell.Tab.0.left" timestamp="1582649644000">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1663" height="242" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1582649644000" />
+    <state width="1663" height="242" key="GridCell.Tab.0.right" timestamp="1582649644000">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1663" height="242" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1582649644000" />
+    <state x="559" y="216" width="588" height="488" key="find.popup" timestamp="1582645983141">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="559" y="216" width="588" height="488" key="find.popup/0.0.1707.920@0.0.1707.920" timestamp="1582645983141" />
+  </component>
+</project>

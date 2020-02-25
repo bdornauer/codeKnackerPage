@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="/style/style.css" />
+</h:head>
+<h:body>
+	<div class="alphabetTable">
+
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'A ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="A" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[0]}" id="A"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'B ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="B" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[1]}" id="B"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'C ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="C" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[2]}" id="C"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'D ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="D" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[3]}" id="D"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'E ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="E" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[4]}" id="E"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'F ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="F" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[5]}" id="F"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'G ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="G" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[6]}" id="G"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'H ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="H" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[7]}" id="H"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'I ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="I" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[8]}" id="I"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'J ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="J" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[9]}" id="J"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'K ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="K" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[10]}" id="K"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'L ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="L" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[11]}" id="L"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'M ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="M" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[12]}" id="M"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'N ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="N" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[13]}" id="N"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'O ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="O" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[14]}" id="O"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'P ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="P" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[15]}" id="P"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'Q ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="Q" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[16]}" id="Q"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'R ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="R" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[17]}" id="R"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'S ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="S" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[18]}" id="S"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'T ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="T" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[19]}" id="T"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'U ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="U" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[20]}" id="U"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'V ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="V" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[21]}" id="V"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'W ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="W" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[22]}" id="W"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'X ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="X" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[23]}" id="X"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'Y ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="Y" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[24]}" id="Y"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+		<div class="alphabetCell"
+			 onmouseover="addColor(document.getElementById('phrase'),'Z ',0); "
+			 onmouseout="removeColor()">
+
+			<div class="plaintextLetter">
+				<p:outputLabel value="Z" />
+			</div>
+
+			<div class="ciphretextLetter">
+				<p:inputText size="1"
+							 value="#{codeKnackerBean.ciphretextAlphabet[25]}" id="Z"
+							 class="inputLetter" maxlength="1">
+					<p:ajax event="keydown" update="out1 out2"
+							listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+					<p:ajax event="keydown" update="letters"
+							listener="#{codeKnackerController.updateUseAndUnusedLetters(codeKnackerBean)}" />
+					<f:validateRequired />
+					<p:keyFilter regEx="/[\-a-zA-Z]/" />
+				</p:inputText>
+			</div>
+		</div>
+
+
+	</div>
+</h:body>
+</html>

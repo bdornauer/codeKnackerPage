@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="/style/style.css" />
+	<script src="/scripts/main.js" type="text/javascript"></script>
+</h:head>
+
+<h:body>
+	<div class="overlay-content">
+		<div align="right">
+			<span style="font-size: 30px; cursor: pointer"
+				onclick="closeDiv('informationAtbasch')">&#10006;</span>
+		</div>
+		<h1 style="margin-top: 0px;">Atbasch</h1>
+
+		<img src="/content/atbasch/jeremia.jpg" height="30%"
+			style="float: left; padding: 20px;" />
+
+		<h2>Geschichte</h2>
+		<p>
+			Bereits 600 v.Chr. verschlüsselten Kryptografen aus Palästina Texte
+			mit dem Atbasch-Verfahren. Es zählt zu den ältesten belegten
+			Verfahren. Im alten Testament gibt es im Buch von Jeremiah, Kapitel
+			25, Vers 26 bereits eine Textstelle, in der das Wort <i>Babel</i> mit
+			Hilfe von Atbasch zu <i>Sheshach</i> ersetzt wird. Dass bereits im
+			Alten Testament Wörter verschlüsselt wurden, faszinierte die Mönche
+			im Mittelalter. Sie wollten die verborgenen Botschaften entschlüsseln
+			und Geheimnisse der Bibel aufdecken.
+		</p>
+
+		<h2>Verfahren</h2>
+		<p>Das Atbasch-Verfahren zählt zu den Substitutionsverfahren. Beim
+			Verschlüsseln eines einzelnen Buchstaben stellt man fest, um wie
+			viele Stellen dieser vom Anfang des Alphabets entfernt ist.
+			Anschließend ersetzt man den Buchstaben, durch jenen Buchstaben, der
+			genau gleich viele Stellen vom Ende des Alphabets entfernt ist.</p>
+			
+		<div class="imgExample">
+			<img src="/content/atbasch/atbaschVerschlüsselungsalphabet.PNG"
+				height="30%" style="text-align: center; padding: 20px; width: 80ev;" />
+		</div>
+
+		<h2>Beispiel</h2>
+		<div class="imgExample">
+			<img src="/content/atbasch/atbaschExample.png"
+				class="infoCaesarExample" height="500" />
+		</div>
+
+
+		<h2>Quellen</h2>
+		<ul>
+			<li>Borys, Thomas (2011): Codierung und Kryptologie. Facetten
+				einer anwendungsorientierten Mathematik im Bildungsprozess.
+				Wiesbaden: Vieweg+Teubner Verlag / Springer Fachmedien Wiesbaden
+				GmbH Wiesbaden.</li>
+			<li>Freiermuth, Karin; Hromkovič, Juraj; Keller, Lucia; Steffen,
+				Bj&ouml;rn (2010): Einf&uuml;hrung in die Kryptologie. Lehrbuch
+				f&uuml;r Unterricht und Selbststudium. 1. Aufl. Wiesbaden: Vieweg +
+				Teubner.</li>
+			<li>Singh, Simon (2016): Geheime Botschaften. Die Kunst der
+				Verschl&uuml;sselung von der Antike bis in die Zeiten des Internet.
+				13. Auflage. M&uuml;nchen: dtv (Dtv, 33071).</li>
+		</ul>
+
+		<h2>Bildquelle</h2>
+		<ul>
+			<li>Erwin Jurschitza (2005): The Yorck Project (2002). 10.000
+				Meisterwerke der Malerei. URL:
+				https://de.wikipedia.org/wiki/Jeremia#/media/File:Michelangelo_Buonarroti_027.jpg
+				(besucht am 16.05.2019)</li>
+		</ul>
+
+		<div style="text-align: center;">
+			<p:commandButton value="Close" class="my-button my-LinkButton"
+							 onclick="closeDiv('informationAtbasch')"/>
+		</div>
+
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<link rel="icon" href="\content\key.png" />
+</h:head>
+
+<h:body>
+	<ui:include src="/includes/header.xhtml" />
+	<div class="wrapper">
+		<div class="wrapperCodeKnacker">
+			<h:form id="codeKnackerForm">
+
+				<!--********************************* INPUT****************************************** -->
+				<div class="containerCodeKnacker1">
+					<img src="/content/key.png" id="keyPicture" alt="key"/>
+					<h1>CodeKnacker <span style="font-size: 30px; cursor: pointer"
+										  onclick="openDiv('informationCodeKnacker')" class="infoButton"> &#8505; </span></h1>
+
+				</div>
+
+				<div id="informationCodeKnacker" class="overlay">
+					<ui:include src="informationCodeKnacker.xhtml" />
+				</div>
+
+				<div class="containerCodeKnacker2">
+					<div class="itemCodeKnacker2-1">
+						<h:panelGrid columns="1" style="display: inline-block;"
+							id="encryptionTechniqueGrid">
+							<p:outputLabel>Wähle ein Verfahren:</p:outputLabel>
+						<p:selectOneMenu id="console" value="#{codeKnackerBean.technique}">
+								<f:selectItem itemLabel="Substitution" itemValue="substitution" />
+								<f:selectItem itemLabel="Caesar" itemValue="caesar" />
+								<f:selectItem itemLabel="Atbasch" itemValue="atbasch" />
+								<p:ajax update="encryptionTechniqueGrid" />
+								<p:ajax update="out1 out2"
+									listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+							</p:selectOneMenu>
+						</h:panelGrid>
+					</div>
+
+					<div class="itemCodeKnacker2-1">
+						<h:panelGrid columns="1" style="display: inline-block"
+							id="difficultyGrid">
+							<p:outputLabel>Wähle eine Schwierigkeit:</p:outputLabel>
+							<p:selectOneButton value="#{codeKnackerBean.difficulty}">
+								<f:selectItem itemLabel="Leicht" itemValue="Leicht"/>
+								<f:selectItem itemLabel="Schwer" itemValue="Schwer" />
+								<p:ajax update="out1 out2"
+									listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+							</p:selectOneButton>
+						</h:panelGrid>
+					</div>
+
+					<div class="itemCodeKnacker2-2">
+						<h:panelGrid columns="1" class="inputCodeKnacker"
+							style="width:100%;" id="input">
+							<p:outputLabel value="Gibt hier den Geheimtext ein:" />
+							<p:inputTextarea value="#{codeKnackerBean.inputText}"
+								style="width:100%;" rows="3" autoResize="false">
+								<p:ajax event="keyup" update="out1 out2 chartView"
+									listener="#{codeKnackerController.updateCiphretextAlphabet(codeKnackerBean)}" />
+								<p:ajax event="keyup" update="out1 out2"
+									listener="#{codeKnackerController.updateChartInputValue(codeKnackerBean,chartBean)}" />
+							</p:inputTextarea>
+						</h:panelGrid>
+					</div>
+
+				</div>
+
+				<!--*********************************Substitution****************************************** -->
+				<div class="containerCodeKnackerSubstitution" id="substitution">
+					<div class="itemCodeKnacker2-1">
+						<h2 style="color: #dcb51f"> Verwendet <b> - </b> oder <b>Buchstaben aus dem deutschen Alphabet</b>!</h2>
+
+						<ui:include src="alphabetField.xhtml" />
+						<ui:include src="lettersInformation.xhtml"/>
+
+						<p:commandButton type="button" value="Reset" class="my-button">
+							<p:ajax update="codeKnackerForm"
+								listener="#{codeKnackerController.resetAlphabet(codeKnackerBean)}" />
+							<p:ajax update="codeKnackerForm" 
+							listener="#{codeKnackerController.resetAlphabet(codeKnackerBean)}"></p:ajax>
+						</p:commandButton>
+					</div>
+				</div>
+
+				<!--*********************************Atbasch****************************************** -->
+				<div class="containerCodeKnackerSubstitution" id="atbasch">
+					<div class="itemCodeKnacker2-1">
+						<div class="imgExample"> <img
+							src="/content/atbasch/atbaschVerschlüsselungsalphabet.PNG"
+							style="text-align: center; padding: 20px; min-width: 600px; width: 100% !important;" />
+					</div>
+				</div>
+		</div>
+
+		<!--*********************************CAESAR-DISK***************************************** -->
+		<div class="containerCodeKnackerCaesar" id="caesar">
+			<div class="itemCodeKnacker2-1">
+				<ui:include src="caesarSlice.xhtml" />
+			</div>
+		</div>
+
+		<!--*********************************OUTPUT****************************************** -->
+		<div class="containerCodeKnacker4">
+
+			<div class="itemCodeKnacker4-1">
+				<h2 style="text-align: left; margin: 0px; padding: 0px;">Input</h2>
+				<h:panelGrid column="1">
+					<p:outputLabel id="out1">
+						<div id="phrase">#{codeKnackerBean.inputConvertedText}</div>
+					</p:outputLabel>
+				</h:panelGrid>
+			</div>
+
+			<div class="itemCodeKnacker4-2">
+				<img src="/content/arrow3.png" id="arrow" />
+			</div>
+
+			<div class="itemCodeKnacker4-1">
+			<h2 style="text-align: left; margin: 0px; padding: 0px;">Output</h2>
+				<h:panelGrid column="1">
+					<p:outputLabel id="out2">
+						<div id="phrase2">#{codeKnackerBean.outputText}</div>
+					</p:outputLabel>
+				</h:panelGrid>
+			</div>
+		</div>
+
+		<!--*********************************CHARTS****************************************** -->
+		<div class="chartContainer">
+			<div class="chartItem">
+				<ui:include src="chartsCodeKnacker.xhtml" />
+			</div>
+		</div>
+
+		</h:form>
+	</div>
+	</div>
+	<ui:include src="/includes/footer.xhtml" />
+</h:body>
+</html>

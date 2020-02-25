@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<link rel="icon" href="\content\key.png" />
+</h:head>
+<h:body>
+	<ui:include src="/includes/header.xhtml" />
+	<div class="wrapper">
+		<div class="containerImpressum">
+			<!-- Input field -->
+			<div class="itemImpressum">
+				<h:panelGrid columns="1" >
+					<h:outputText value="Von: " style="font-weight: bold;" />
+					<h:outputText value="Benedikt Maximilian Dornauer" class="impressumText"/>
+					<h:outputText value="Email: " style="font-weight: bold;"/>
+					<h:outputText value="benedikt.dornauer@student.uibk.ac.at" class="impressumText" />
+					<h:outputText value="Land: " style="font-weight: bold;" />
+					<h:outputText value="Tirol Österreich" class="impressumText"/>
+					<h:outputText value="Projekt: " style="font-weight: bold;"/>
+					<h:outputText
+						value="Bachelorarbeit am Institut für Informatik
+						und Institut für Mathematik - UNI Innsbruck " class="impressumText"/>
+				</h:panelGrid>
+			</div>
+			</div>
+			</div>
+
+			<ui:include src="/includes/footer.xhtml" />
+</h:body>
+</html>

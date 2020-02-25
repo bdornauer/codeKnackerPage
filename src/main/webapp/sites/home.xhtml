@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<link rel="icon" href="\content\key.png" />
+</h:head>
+<h:body>
+	<ui:include src="/includes/header.xhtml" />
+
+	<!-- *****************************************************InformationTECHNIQUES************************************************************** -->
+	<div id="informationCaesar" class="overlay">
+		<ui:include src="caesar/informationCaesar.xhtml" />
+	</div>
+
+	<div id="informationSubstitution" class="overlay">
+		<ui:include src="substitution/informationSubstitution.xhtml" />
+	</div>
+
+	<div id="informationAtbasch" class="overlay">
+		<ui:include src="atbasch/informationAtbasch.xhtml" />
+	</div>
+
+	<div class="wrapper">
+		<div class="boxes">
+			<!-- *****************************************************CODEKNACKER************************************************************** -->
+			<div class="boxCodeKnacker"
+				onclick="document.location.href='/sites/codeKnacker/codeKnacker.xhtml';return true;">
+				<div class="cellHeading">Codeknacker</div>
+				<div class="cell">
+					<h3>Tool zur Unterstützung zum Entschlüsseln von Texten.</h3>
+				</div>
+				<img src="/content/key.png" class="imgHome" />
+			</div>
+
+			<!-- *****************************************************SUBSTITUTION************************************************************** -->
+			<div class="box">
+				<div class="cellHeading" style="font-size: 30px;">
+					Monoalphabetische Substitution <span
+						style="font-size: 30px; cursor: pointer"
+						onclick="openDiv('informationSubstitution')" class="infoButton">
+						&#8505; </span>
+				</div>
+				<div class="celltext">Einzelne Buchstaben des Klartexts
+					werden mit Hilfe eines festgelegten Schlüsselalphabets verschlüsselt.</div>
+				<div class="cell">
+					<img src="/content/substitution/substitution.PNG" class="imgHome"
+						width="70%" />
+				</div>
+				<div class="cell">
+					<h:form id="formBox2">
+						<p:commandButton type="button" class="my-button my-LinkButton"
+							onclick="document.location.href='/sites/substitution/substitutionVerschluesselung.xhtml';return true;"
+							value="Verschlüsselung" />
+						<p:commandButton type="button" class="my-button my-LinkButton"
+							onclick="document.location.href='/sites/codeKnacker/codeKnacker.xhtml';return true; "
+							value="Codeknacker" update="formBox2">
+							<f:ajax
+								listener="#{codeKnackerBean.setTechnique('substitution')}" />
+						</p:commandButton>
+					</h:form>
+				</div>
+			</div>
+
+			<!-- *****************************************************CAESAR************************************************************** -->
+			<div class="box">
+				<div class="cellHeading">
+					Caesar <span style="font-size: 30px; cursor: pointer"
+						onclick="openDiv('informationCaesar')" class="infoButton">
+						&#8505; </span>
+				</div>
+				<div class="celltext">Bei diesem Verfahren werden Klartexte
+					durch eine Verschiebung des Alphabets, um eine bestimmte Anzahl an
+					Positionen, verschlüsselt.</div>
+				<div class="cell">
+					<img src="/content/caesar/caesarDiskOriginal.jpg" class="imgHome" />
+				</div>
+				<div class="cell">
+					<h:form id="formBox">
+						<p:commandButton type="button" class="my-button my-LinkButton"
+							onclick="document.location.href='/sites/caesar/caesarVerschluesselung.xhtml';return true;"
+							value="Verschlüsselung" />
+						<p:commandButton type="button" class="my-button my-LinkButton"
+							onclick="document.location.href='/sites/codeKnacker/codeKnacker.xhtml';return true; "
+							value="Codeknacker" update="formBox">
+ 							<f:ajax
+								listener = "#{codeKnackerBean.setTechnique('caesar')}" />
+						</p:commandButton>
+					</h:form>
+				</div>
+			</div>
+
+
+			<!-- *****************************************************ATBASCH************************************************************** -->
+
+			<div class="box">
+				<div class="cellHeading">
+					Atbasch <span style="font-size: 30px; cursor: pointer"
+						onclick="openDiv('informationAtbasch')" class="infoButton">
+						&#8505; </span>
+				</div>
+				<div class="celltext">Beim Atbasch-Verfahren wird das Klartextalphabet
+					in umgedrehter Reihenfolge als Geheimtextalphabet verwendet, d.h. A durch Z, B durch Y usw.</div>
+				<div class="cell">
+					<img src="/content/atbasch/atbasch.PNG" class="imgHome" />
+				</div>
+				<div class="cell">
+					<h:form id="formBox3">
+						<p:commandButton type="button" class="my-button my-LinkButton"
+							onclick="document.location.href='/sites/atbasch/atbaschVerschluesselung.xhtml';return true;"
+							value="Verschlüsselung" />
+						<p:commandButton type="button" class="my-button my-LinkButton"
+							onclick="document.location.href='/sites/codeKnacker/codeKnacker.xhtml';return true; "
+							value="Codeknacker" update="formBox3">
+							<f:ajax listener="#{codeKnackerBean.setTechnique('atbasch')}" />
+						</p:commandButton>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<ui:include src="/includes/footer.xhtml" />
+</h:body>
+</html>

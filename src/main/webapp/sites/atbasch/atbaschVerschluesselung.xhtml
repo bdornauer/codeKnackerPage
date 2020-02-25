@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<link rel="icon" href="\content\key.png" />
+</h:head>
+<h:body>
+	<ui:include src="/includes/header.xhtml" />
+	<div class="wrapper">
+
+		<h1>
+			Atbasch <span style="font-size: 30px; cursor: pointer"
+				onclick="openDiv('informationAtbasch')" class="infoButton"> &#8505; </span>
+		</h1>
+
+		<div id="informationAtbasch" class="overlay">
+			<ui:include src="informationAtbasch.xhtml" />
+		</div>
+
+
+		<h:form id="formular">
+			<div class="container">
+				<!-- Input field -->
+				<div class="item">
+					<h2 style="text-align: left; margin: 0px; padding: 0px;">Input</h2>
+					<h:panelGrid columns="2" style="text-align: left;"
+						id="inputPropertiesGrid">
+						<p:outputLabel value="Sonderzeichen löschen: " />
+						<p:inputSwitch value="#{inputHandleBean.specialCharacters}">
+							<p:ajax
+								listener="#{atbaschController.handleEvent(inputHandleBean)}"
+								update="out out2 inputPropertiesGrid" />
+
+						</p:inputSwitch>
+						<p:outputLabel value="Leerzeichen löschen: " />
+						<p:inputSwitch value="#{inputHandleBean.withSpaces}">
+							<p:ajax update="out out2 inputPropertiesGrid"
+								listener="#{atbaschController.handleEvent(inputHandleBean)}" />
+						</p:inputSwitch>
+					</h:panelGrid>
+
+					<p:inputTextarea id="counter" rows="5" autoResize="false"
+						value="#{inputHandleBean.inputText}" class="inputTextField">
+						<p:ajax event="keyup" update="out out2 inputPropertiesGrid"
+							listener="#{atbaschController.handleEvent(inputHandleBean)}" />
+					</p:inputTextarea>
+
+				</div>
+
+				<!-- Arrow -->
+				<div class="itemArrow">
+					<img src="/content/arrow3.png" id="arrow" />
+				</div>
+
+				<!-- Key field for the encryption -->
+				<div class="item">
+					<h2 style="text-align: left; margin: 0px; padding: 0px;">Einstellungen</h2>
+					<h:panelGrid id="encryptionSettings">
+						<div>
+							<p:inputSwitch value="#{inputHandleBean.direction}"
+								onLabel="Entschlüsseln" offLabel="Verschlüsseln">
+								<p:ajax update="out out2 encryptionSettings"
+									listener="#{atbaschController.handleEvent(inputHandleBean)}" />
+							</p:inputSwitch>
+						</div>
+						
+					</h:panelGrid>
+
+				</div>
+
+				<!-- Arrow -->
+				<div class="itemArrow">
+					<img src="/content/arrow3.png" id="arrow" />
+				</div>
+
+				<!-- The calculated output -->
+				<div class="item">
+					<h2 style="text-align: left; margin: 0px; padding: 0px;">Output</h2>
+					<div class="textOutput">
+						<b>Eingabe:</b><br />
+						<h:outputText id="out" value="#{inputHandleBean.outputText}" />
+					</div>
+					<div class="textOutput2">
+						<b>Ausgabe:</b><br />
+						<h:outputText id="out2" value="#{inputHandleBean.cryptedText}" />
+					</div>
+					<div id="serviceButtons">
+						<p:commandButton value="Erzeuge PDF"
+							action="#{pdfController.createPDF(inputHandleBean)}" update="formular"
+							oncomplete="window.open('/content/Verschluesselung.pdf')" class="my-button"/>
+						<p:commandButton value="Sende Mail" type="button"
+							onclick="PF('dialogEmail').show();" class="my-button" />
+					</div>
+				</div>
+			</div>
+		</h:form>
+
+		<h:form id="formular2">
+			<!-- Dialog for sending emails -->
+			<p:dialog header="Email senden mit der Ausgabe"
+				widgetVar="dialogEmail" responsive="true" id="dialogVar">
+				<h:panelGrid columns="2" id="emailGrid">
+					<p:outputLabel value="Email" />
+					<p:inputText value="#{emailBean.to}" id="email"
+						validatorMessage="Invalid email format"
+						requiredMessage="Please enter your email address.">
+						<f:validateRegex
+							pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+					</p:inputText>
+					<p:outputLabel value="Name" />
+					<p:inputText value="#{emailBean.name}" id="name"
+						requiredMessage="Please enter your email address.">
+					</p:inputText>
+					<p:watermark for="email" value="Gütlige Email bitte" />
+					<p:message for="email" />
+					<p:outputLabel value="Message" />
+					<p:inputTextarea value="#{emailBean.message}" />
+					<p:commandButton value="Send Email"
+						onsuccess="PF('dialogEmail').hide();"
+						action="#{emailController.sendEmail(emailBean, inputHandleBean)}"
+						update="emailGrid"
+						class="my-button" />
+				</h:panelGrid>
+			</p:dialog>
+
+			<p:ajaxExceptionHandler type="java.lang.IllegalArgumentException"
+				update="exceptionDialogNull"
+				onexception="PF('exceptionDialogNull').show(); atbaschController.direction(true); " />
+				
+			<p:dialog id="exceptionDialogNull" header="Keine Umlaute verwenden"
+				widgetVar="exceptionDialogNull" responsive="true" width="400px">
+						Die Eingabe darf nicht leer sein. 
+						<p:button class="my-button" onclick="PF('exceptionDialogNull').hide()" value="Okay" />
+			</p:dialog>
+
+			<p:ajaxExceptionHandler type="java.lang.RuntimeException"
+				update="exceptionDialog"
+				onexception="PF('exceptionDialog').show(); atbaschController.direction(true); " />
+
+			<p:dialog id="exceptionDialog" header="Keine Umlaute verwenden"
+				widgetVar="exceptionDialog" responsive="true" width="400px">
+						Die Verwendung von Umlauten wie ä ist nicht möglich, 
+						es können nur Buchstaben aus dem Alphabet A-Z oder a-z 
+						entschlüsselt werden.
+						1. Ersetzten Sie dich Buchstabe Ä,Ö, Ü durch AE, OE, UE oder löschen Sie diese.
+						2. Wechseln Sie wieder auf den Reiter entschlüsseln.
+						<p:button class="my-button" onclick="PF('exceptionDialog').hide()" value="Okay" />
+			</p:dialog>
+
+
+			
+		</h:form>
+	</div>
+
+	<ui:include src="/includes/footer.xhtml" />
+
+</h:body>
+</html>

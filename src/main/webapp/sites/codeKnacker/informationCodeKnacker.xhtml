@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+    <link rel="stylesheet" type="text/css" href="/style/style.css"/>
+    <script src="/scripts/main.js" type="text/javascript"></script>
+</h:head>
+
+<h:body>
+    <div class="overlay-content">
+        <div align="right">
+			<span style="font-size: 30px; cursor: pointer"
+                  onclick="closeDiv('informationCodeKnacker')">&#10006;</span>
+        </div>
+        <h1 style="margin-top: 0px;">CodeKnacker - Häufigkeitsanalyse</h1>
+
+        <p>
+			Im 9.Jahrhundert beschäftigten sich viele arabische Gelehrte mit der Entzifferung
+			kryptografischer Botschaften. Das erste - uns bekannte - Werk, das sich mit der Entschlüsselung geheimer
+			Nachrichten beschäftigt, wurde von Abū Yaʿqūb ibn Ishāq al-Kindī verfasst. Die Kernidee von al-Kindī Verfahren beruht
+			in der Annahme, dass der am häufigsten vorkommende Buchstabe eines Alphabets auch jener ist,
+			welcher am häufigsten in der verschlüsselten Nachricht vorkommt. Nun können Kryptoanalytiker versuchen anhand
+			von Wahrscheinlichkeiten verschlüsselte Buchstaben richtig zu deuten und so schrittweise verschlüsselte Botschaften
+			entziffern. Im Video <i>Kryptoanalyse: Häufigkeitsanalyse und Caesar-Verschlüsselung</i> wird die Häufigkeitsanalyse genau erklärt.</p>
+		<div id="html5player-wrapper" style="text-align: center">
+			<iframe id="myythtml5player" frameborder="0" allowfullscreen="1"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					title="YouTube video player"
+					width="720" height="405"
+					src="https://www.youtube.com/embed/Dz8A4K6Cotg"></iframe>
+		</div>
+
+        <div style="text-align: center;">
+            <p:commandButton value="Close" class="my-button my-LinkButton"
+                             onclick="closeDiv('informationCodeKnacker')"/>
+        </div>
+    </div>
+</h:body>
+</html>

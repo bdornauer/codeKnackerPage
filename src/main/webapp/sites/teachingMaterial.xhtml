@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head >
+	<link rel="icon" href="\content\key.png" />
+	<style type="text/css">
+		.ui-tabs .ui-tabs-panel{
+			height: calc(100vh - 178px); /*Header:14+16+18 - Body: 20 +20 Footer: 20+20+50 Total: 178 */
+		}
+
+	</style>
+	<script type="text/javascript">
+		/*
+		var pwd = prompt ("Das Passwort wurde verschlüsselt es lautet: SDVVZRUG (Eingabe: nur Kleinbuchstaben." +
+				" Entschlüssen Sie es, um Zugriff auf das Material zu erhalten " +
+				"oder erhalten Sie weiter Information per Email: benedikt.dornauer@student.uibk.ac.at");
+
+		while (pwd != 'password'){
+			alert("Login is incorrect");
+			var pwd = prompt ("Das Passwort wurde verschlüsselt es lautet: SDVVZRUG (Eingabe: nur Kleinbuchstaben." +
+					" Entschlüssen Sie es, um Zugriff auf das Material zu erhalten " +
+					"oder erhalten Sie weiter Information per Email: benedikt.dornauer@student.uibk.ac.at");
+		}
+		-*/
+	</script>
+</h:head>
+<h:body>
+	<ui:include src="/includes/header.xhtml" />
+
+	<p:tabView orientation="left" rendered="true">
+		<p:tab title="1. Einleitung und Erklärung">
+			<p:media value="/content/material/1_Einleitung_und_Erklaerung.pdf" width="100%" height="100%">
+				Kann leider in diesem Broswer nicht angezeigt werden.<h:outputLink value="/content/material/1_Einleitung_und_Erklaerung.pdf">Download HIER.</h:outputLink>
+			</p:media>
+		</p:tab>
+		<p:tab title="2. Atbasch-Verfahren">
+			<p:media value="/content/material/2_Atbasch_Verfahren.pdf" width="100%" height="100%">
+				Kann leider in diesem Broswer nicht angezeigt werden.<h:outputLink value="/content/material/2_Atbasch_Verfahren.pdf">Download HIER.</h:outputLink>
+			</p:media>
+		</p:tab>
+		<p:tab title="3. Caesar-Verfahren">
+			<p:media value="/content/material/3_Caesar_Verfahren.pdf" width="100%" height="100%">
+				Kann leider in diesem Broswer nicht angezeigt werden.<h:outputLink value="/content/material/3_Caesar_Verfahren.pdf">Download HIER.</h:outputLink>
+			</p:media>
+		</p:tab>
+		<p:tab title="4. Substitutions-Verfahren">
+			<p:media value="/content/material/4_Substitutions_Verfahren.pdf" width="100%" height="100%">
+				Kann leider in diesem Broswer nicht angezeigt werden.<h:outputLink value="/content/material/4_Substitutions_Verfahren.pdf">Download HIER.</h:outputLink>
+			</p:media>
+		</p:tab>
+		<p:tab title="5.1. Themenschwerpunkt -  Stabilisierungscharakter bei der Häufigkeitsanalyse">
+			<p:media value="/content/material/5_1_Themenschwerpunkt_Stabilisierungscharakter_bei_der_Haeufigkeitsanalyse.pdf" width="100%" height="100%">
+				Kann leider in diesem Broswer nicht angezeigt werden.<h:outputLink value="/content/material/5_1_Themenschwerpunkt_Stabilisierungscharakter_bei_der_Haeufigkeitsanalyse.pdf">Download HIER.</h:outputLink>
+			</p:media>
+		</p:tab>
+		<p:tab title="5.2. Themenschwerpunkt - Sicherer Datenaustausch">
+			<p:media value="/content/material/5_2_Themenschwerpunkt_Sicherer_Datenaustausch.pdf" width="100%" height="100%">
+				Kann leider in diesem Broswer nicht angezeigt werden.<h:outputLink value="/content/material/5_2_Themenschwerpunkt_Sicherer_Datenaustausch.pdf">Download HIER.</h:outputLink>
+			</p:media>
+		</p:tab>
+		<p:tab title="5.3. Themenschwerpunkt - Sicherheit ist relativ">
+			<p:media value="/content/material/5_3_Themenschwerpunkt_Sicherheit_ist_relativ.pdf" width="100%" height="100%">
+				Kann leider in diesem Broswer nicht angezeigt werden.<h:outputLink value="/content/material/5_3_Themenschwerpunkt_Sicherheit_ist_relativ.pdf">Download HIER.</h:outputLink>
+			</p:media>
+		</p:tab>
+		<p:tab title="6. Lösungen">
+			<p:media value="/content/material/6_Loesungen.pdf" width="100%" height="100%">
+				Kann leider in diesem Broswer nicht angezeigt werden.<h:outputLink value="/content/material/6_Loesungen.pdf">Download HIER.</h:outputLink>
+			</p:media>
+		</p:tab>
+		<p:tab title="Gesamte Arbeit">
+			<p:media value="/content/material/Arbeit.pdf" width="100%" height="100%" style="color: #8FC1E3">
+				Kann leider in diesem Broswer nicht angezeigt werden.<h:outputLink value="/content/material/Arbeit.pdf">Download HIER.</h:outputLink>
+			</p:media>
+		</p:tab>
+	</p:tabView>
+	<ui:include src="/includes/footer.xhtml" />
+</h:body>
+</html>

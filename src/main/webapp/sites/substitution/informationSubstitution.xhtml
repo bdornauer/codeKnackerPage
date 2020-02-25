@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="/style/style.css" />
+	<script src="/scripts/main.js" type="text/javascript"></script>
+</h:head>
+
+<h:body>
+	<div class="overlay-content">
+		<div align="right">
+			<span style="font-size: 30px; cursor: pointer"
+				onclick="closeDiv('informationSubstitution')">&#10006;</span>
+		</div>
+		<h1 style="margin-top: 0px;">Einfache monoalphabetische 			
+			Substitution</h1>
+		<img src="/content/substitution/substitution.PNG" class="infoCaesarImg" style="float: left; padding: 20px;" />
+		<h2>Beschreibung</h2>
+
+
+		<p>Die einfache monoalphabetische Substitution ist kein
+			eigenständiges Verschlüsselungsverfahren. Der Begriff fasst eine Menge
+			von verschiedenen Verschlüsselungsverfahren zusammen. Beispielsweise
+			handelt es sich bei Caesar und Atbasch um eine einfache
+			monoalphabetische Substitution.</p>
+		<ul style="font-size: 25px;">
+			<li><b>Substitution:</b> Die Buchstaben eines Klartextes werden
+				durch Zeichen ersetzt.</li>
+			<li><b>Monoalphabetisch: </b> Es existiert nur ein einziges Schlüsselalphabet.</li>
+			<li><b>Einfach: </b>Für jedes Klartext-Zeichen gibt es genau <b>ein</b>
+				eindeutiges Geheimtextzeichen.</li>
+		</ul>
+		<p>Zur besseren Verständlichkeit verwenden wir  für die
+			monoalphabetische Substitution (nur) das lateinische Alphabet (A bis
+			Z). Verwenden wir nur dieses Alphabet, finden wir 26! = 403 291 461 126 605
+			635 584 000 000 Möglichkeiten zur Anordnung des Geheimtextalphabets.
+		</p>
+
+		<br />
+		<h2>Beispiel</h2>
+
+
+		<div class="imgExample">
+			<img src="/content/substitution/substitutionExample.png"
+				class="infoCaesarExample" height="500" />
+		</div>
+		<h2>Quellen</h2>
+		<ul>
+			<li>Borys, Thomas (2011): Codierung und Kryptologie. Facetten
+				einer anwendungsorientierten Mathematik im Bildungsprozess.
+				Wiesbaden: Vieweg+Teubner Verlag / Springer Fachmedien Wiesbaden
+				GmbH Wiesbaden.</li>
+			<li>Freiermuth, Karin; Hromkovič, Juraj; Keller, Lucia; Steffen,
+				Bj&ouml;rn (2010): Einf&uuml;hrung in die Kryptologie. Lehrbuch
+				f&uuml;r Unterricht und Selbststudium. 1. Aufl. Wiesbaden: Vieweg +
+				Teubner.</li>
+			<li>Singh, Simon (2016): Geheime Botschaften. Die Kunst der
+				Verschl&uuml;sselung von der Antike bis in die Zeiten des Internet.
+				13. Auflage. M&uuml;nchen: dtv (Dtv, 33071).</li>
+		</ul>
+
+		<div style="text-align: center;">
+			<p:commandButton value="Close" class="my-button my-LinkButton"
+							 onclick="closeDiv('informationSubstitution')"/>
+		</div>
+
+	</div>
+</h:body>
+</html>

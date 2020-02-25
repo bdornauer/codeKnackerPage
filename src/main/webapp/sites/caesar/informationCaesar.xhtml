@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="/style/style.css" />
+	<script src="/scripts/main.js" type="text/javascript"></script>
+</h:head>
+
+<h:body>
+	<div class="overlay-content">
+		<div align="right">
+			<span style="font-size: 30px; cursor: pointer"
+				onclick="closeDiv('informationCaesar')">&#10006;</span>
+		</div>
+		<h1 style="margin-top: 0px;">Caesar</h1>
+		<img src="/content/caesar/juliusCaeser.jpg" class="infoCaesarImg"
+			height="300px;" style="float: left; padding: 20px;" />
+		<h2>Geschichte</h2>
+		<p>
+			Der römische Kaiser <i>Gaius Julius Caesar</i> nutzte Geheimschriften, um seine
+			Nachrichten vor Feinde zu schützen. Während des Gallischen Krieges gab er einem Reiter den Auftrag 
+			einen Brief an den römischen Feldherrn Quintus Cicero zu überbringen. Um die Nachricht zu schützen,
+			ersetzte er die lateinischen Buchstaben durch griechische Buchstaben.
+			Da seine Feinde jedoch auch der griechischen Sprache mächtig waren,
+			ist davon auszugehen, dass dieses monoalphabetische Verfahren unsicher war.
+		 <br /> Ein weitaus bekannteres Verfahren von <i>Gaius
+				Julius Caesar</i> ist das nach ihm benannte Caesar-Verfahren bzw.
+			Caesar-Verschiebung bzw. kurz Caesar. Im Buch <i>Divus Iulius</i> vom
+			Schriftsteller <i> Gaius Suetonius Tranquillus </i> wird das
+			monoalphabetische Substitutionsverfahren (Ersetzungsverfahren)
+			beschrieben.
+		</p>
+		<br /> <br />
+		<h2>Verfahren</h2>
+		<img src="/content/caesar/caesarDiskOriginal.jpg" height="300px;"
+			style="float: right; padding: 20px;" />
+		<p>
+			Im ersten Buch <i>Divus Iulius</i> im Band <i>De Vita Casesarum</i>
+			beschreibt der Schriftsteller Suetonius ein Beispiel
+			Caesars-Verfahren wie folgt: <br /> <br />
+		</p>
+		<p style="text-align: center;">
+			<i><em>"Ferner existieren noch Briefe von ihm an Cicero,
+					ebenso an seine Vertrauten</em><br /> <em>&uuml;ber h&auml;usliche
+					Angelegenheiten. Darin hat er das, was geheim bleiben sollte,
+					f&uuml;r</em><br /> <em>den Fall, dass unterwegs der Brief von
+					unbefugter Hand ge&ouml;ffnet w&uuml;rde, in einer</em><br /> <em>Geheimschrift
+					geschrieben, das hei&szlig;t, die Buchstaben wurden so umgestellt,
+					dass</em><br /> <em>aus ihnen kein Wort gebildet werden konnte.
+					Will jemand sie entziffern und</em><br /> <em>hintereinander
+					lesen, so muss er immer den vierten Buchstaben des Alphabets,</em><br />
+				<em>also D f&uuml;r A und so fort an die Stelle des wirklich
+					geschriebenen setzen."</em></i>
+		</p>
+		<br />
+
+		<p>
+			Bei diesem beschriebenen Verfahren wird ein Buchstabe durch einen Buchstaben, 
+			der drei Stellen weiter steht, ersetzt.
+			Im Allgemeinen können wir als Schlüssel <i>i</i> eine Zahl
+			zwischen 0 und 26 wählen. Nach Wahl des Schlüssels codieren wir jeden
+			Buchstaben mit dem um <i>i</i>  Positionen verschobenen Buchstaben. Als
+			visuelle Unterstützung können wir die Caesar-Scheibe verwenden.
+		</p>
+
+		<h2>Beispiel</h2>
+		<div class="imgExample">
+			<img src="/content/caesar/caesarExample.png" class="infoCaesarExample"
+				height="500" />
+		</div>
+		<h2>Quellen</h2>
+		<ul>
+			<li>Borys, Thomas (2011): Codierung und Kryptologie. Facetten
+				einer anwendungsorientierten Mathematik im Bildungsprozess.
+				Wiesbaden: Vieweg+Teubner Verlag / Springer Fachmedien Wiesbaden
+				GmbH Wiesbaden.</li>
+			<li>Freiermuth, Karin; Hromkovič, Juraj; Keller, Lucia; Steffen,
+				Bj&ouml;rn (2010): Einf&uuml;hrung in die Kryptologie. Lehrbuch
+				f&uuml;r Unterricht und Selbststudium. 1. Aufl. Wiesbaden: Vieweg +
+				Teubner.</li>
+			<li>Singh, Simon (2016): Geheime Botschaften. Die Kunst der
+				Verschl&uuml;sselung von der Antike bis in die Zeiten des Internet.
+				13. Auflage. M&uuml;nchen: dtv (Dtv, 33071).</li>
+		</ul>
+
+		<h2>Bildquellen</h2>
+		<ul>
+			<li>Caesar: URL: https://pixabay.com/de/photos/julius-caesar-roman-italien-rom-2789915/ (besucht am 16.05.2019)</li>
+			<li>Caesar-Scheibe: https://de.wikipedia.org/wiki/Caesar-Verschl%C3%BCsselung#/media/File:CipherDisk2000.jpg (besucht am 16.05.2019)</li>
+		</ul>
+
+		<div style="text-align: center;">
+			<p:commandButton value="Close" class="my-button my-LinkButton"
+							 onclick="closeDiv('informationCaesar')"/>
+		</div>
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,745 @@
+/*---------------------------------------------------------------------------------------------------
+												Some global Values 
+-----------------------------------------------------------------------------------------------------*/
+:root {
+  --navigation-main-color: 	rgba(143,193,227,0.9);
+  --navgigation-button-fontcolor: rgba(247,249,251, 1);
+  --navigation-color-button-hover: 	rgb(80,133,165);
+  --bgcolor: linear-gradient(-60deg, #687864 50%, #F7F9FB 50%);
+  
+  --box-color: rgba(247,249,251, 1);
+  --box-color-hover: rgba(143,193,227,0.9);
+  
+  --output-fields: #E6EAE9; 
+  --output-fields-2: rgb(143,193,227); 
+}
+
+
+/*---------------------------------------------------------------------------------------------------
+												BACKGROUND
+-----------------------------------------------------------------------------------------------------*/
+
+.bg {
+  animation:slide 10s ease-in-out infinite alternate;
+  background-image: var(--bgcolor);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:10s;
+}
+
+.bg3 {
+  animation-duration:20s;
+}
+
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+
+/*---------------------------------------------------------------------------------------------------
+												HEADER
+-----------------------------------------------------------------------------------------------------*/
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: var(--navigation-main-color);
+  overflow: hidden;
+}
+
+/* Links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: var(--navgigation-button-fontcolor);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bolder; 
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: var(--navigation-color-button-hover);
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+}
+
+
+/*---------------------------------------------------------------------------------------------------
+												BODY
+-----------------------------------------------------------------------------------------------------*/
+html, body {
+  height:100%;
+  margin:0;
+  font-family: Times New Roman;
+  font-size: 18px;
+  overflow: auto;
+}
+
+h2{
+	font-size: 25px;
+	color: var(--navigation-color-button-hover);
+}
+
+h1{
+	color: var(--navigation-color-button-hover);
+}
+
+p{
+	font-size: 25px;
+	text-align: justify;
+	word-wrap: normal; 
+	margin: 5px;
+}
+
+.wrapper a{
+	word-wrap: break-word; 
+  	overflow-wrap: break-word;
+  
+}
+.wrapper {
+	min-height: calc(100vh - 178px); /*Header:14+16+18 - Body: 20 +20 Footer: 20+20+50 Total: 178 */
+	padding: 20px; 
+}
+
+
+@media screen and (max-width: 600px){
+	.wrapper {
+	min-height: calc(100vh - 148px);
+	padding: 5px; 
+	}
+}
+
+/*---------------------------------------------------------------------------------------------------
+												FOOTER
+-----------------------------------------------------------------------------------------------------*/
+
+.footer {
+  	height: 100px;
+ 	background-color: var(--navigation-main-color);
+ 	padding: 20px;
+}
+
+.footerContainer {
+	display: flex; 
+	flex-direction: row;
+	flex-wrap: wrap; 
+	justify-content: center;
+}
+.footerItem {
+ 	display: flex;	
+ 	padding: 10px;
+ 	color: white;
+}
+
+.footerItem:hover {
+	background: var(--navigation-color-button-hover);
+	cursor: pointer;
+}
+
+/*---------------------------------------------------------------------------------------------------
+												HOME
+-----------------------------------------------------------------------------------------------------*/
+/*For the table*/
+.boxes{
+	display: flex;
+	flex-direction: row; 
+	justify-content: center;
+	flex-flow: wrap;
+	align-items: center;
+}
+
+/*Boxes to link to the different encryption techniques*/ 
+.boxCodeKnacker, .box{
+	width:300px;
+	min-height: 600px;
+	box-sizing: border-box;
+	margin: 10px;
+	text-align: center;
+	transition: 0.6s;
+	background: var(--box-color);
+	border: 5px solid var(--box-color-hover);
+    border-radius: 5px;
+}
+
+/*for the header*/
+.cellHeading{
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	margin: 15px;
+	word-break: normal; 
+}
+
+@media screen and (max-width: 600px){
+	.cellHeading{
+	font-size:30px;
+	}
+}
+
+/*Description of the encyrption technique*/ 
+.celltext{
+	font-size: 20px;
+	text-align: left;
+	margin: 15px;
+}
+
+.boxCodeKnacker{
+	cursor: pointer;
+	text-align: center;
+	border: 5px solid var(--navigation-color-button-hover);
+}
+
+.buttonLink{
+	text-align: center;
+	font-size: 25px;
+	border: 5px solid var(--box-color-hover);
+	margin-top: 5px;
+	margin-bottum: 5px;
+	cursor: pointer;
+}
+
+/*For the codenackerbox*/ 
+.buttonLink:hover{
+		background:var(--box-color-hover);
+	}
+
+.boxCodeKnacker:hover{
+	background:var(--navigation-color-button-hover);
+}
+
+@media screen and (max-width: 600px){
+	.box, .boxCodeKnacker{
+		width: 90%;
+	}
+}
+
+.cell {
+	display: block;
+	margin: 15px;
+	}
+	
+.imgHome {
+	max-width:100%;
+	max-height:100%;
+}
+
+/*---------------------------------------------------------------------------------------------------
+						      Information-pages of different techniques 
+-----------------------------------------------------------------------------------------------------*/
+/******************************Caesar-Information*******************************************/ 
+
+.imgExample{
+	text-align: center;
+	overflow-y: scroll; 
+}
+
+
+/*---------------------------------------------------------------------------------------------------
+										ENCRYPTION-PAGES
+-----------------------------------------------------------------------------------------------------*/
+
+/**Container for the flex items*/ 
+.container {
+	display: flex;
+	flex-direction: row; 
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	padding-top: 5%; 
+}
+
+/*Items in the container*/ 
+.item {
+	margin: 10px;
+	background: var(--box-color);
+	text-align: center;
+	padding: 20px;
+	min-width: 300px;
+	border: 5px solid var(--box-color-hover);
+    border-radius: 5px;
+}
+
+.itemArrow{
+	margin: 10px;
+}
+
+#arrow{
+	height: 50px; 
+}
+
+@media screen and (max-width: 500px) {
+	#arrow{
+		transform: rotate(90deg);
+		height: 30px;
+	}
+}
+	
+
+/*Text output from the non-encrypted and encrypted text*/ 
+.textOutput, .textOutput2{
+	width: 300px;
+	min-height: 100px; 
+	max-height: 300px;
+	overflow: auto;
+	paddng: 5px; 
+	margin: 5px;
+	text-align: left;
+	word-break: break-all;
+}
+.textOutput{
+	background: var(--output-fields);
+}
+
+
+.textOutput2{
+	background: var(--output-fields-2);
+}
+
+/*Substitution*/
+.outputAlphabetLetter, .outputAlphabetCiphreLetter{
+	text-align: center;
+	width: 30px;
+	border: 2px solid var(--box-color-hover);
+	border-radius: 4px;
+	margin: 5px;
+	padding: 2px;
+}
+
+.outputAlphabetLetter{
+	background-color:  var(--box-color-hover);
+}
+
+/*---------------------------------------------------------------------------------------------------
+										Impressum
+-----------------------------------------------------------------------------------------------------*/
+
+.containerImpressum{
+	display: flex;
+	flex-direction: row; 
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	padding-top: 10%; 
+}
+
+.itemImpressum{
+	margin: 10px;
+	background: var(--box-color);
+	padding: 20px;
+	max-width:400px;
+	border: 5px solid var(--box-color-hover);
+    border-radius: 5px;
+    
+}
+
+/*---------------------------------------------------------------------------------------------------
+									CODEKNACKER
+-----------------------------------------------------------------------------------------------------*/
+
+/*Container for the different rows */ 
+.wrapperCodeKnacker{
+		text-align: left;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+
+	
+@media screen and (max-width: 500px) {
+.wrapperCodeKnacker{
+		text-align: left;
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+}
+.unusedLetters{
+	color: darkred;
+	font-weight: bold;
+}
+
+.usedLetters{
+	color: darkgreen;
+	font-weight: bold;
+	text-align: left;
+}
+
+/*******************Different containers for each row - including different flex-items ************************/ 
+
+/************************* first row - INPUT ********************/
+.containerCodeKnacker1{
+	margin: 10px;
+	background: var(--box-color);
+	padding: 20px;
+	border: 5px solid var(--box-color-hover);
+    border-radius: 5px;
+}
+
+/************************* second row - possible TECHNIQUES******/ 
+.containerCodeKnackerCaesar, .containerCodeKnackerSubstitution {
+	display: flex;
+	flex-direction: row; 
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.containerCodeKnacker2 {
+	display: flex;
+	flex-direction: row; 
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
+.itemCodeKnacker2-1, .itemCodeKnacker2-2 {
+	margin: 10px;
+	background: var(--box-color);
+	padding: 20px;
+	border: 5px solid var(--box-color-hover);
+    border-radius: 5px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.itemCodeKnacker2-2{
+	flex-grow: 5;
+}
+
+
+
+#keyPicture{
+	height: 100px;
+	width: 100px;
+	float: left;
+	align-items:center;
+}
+
+/******Substitution*******/
+.alphabetTable{
+	display: flex; 
+	flex-direction: row; 
+	flex-wrap: wrap; 
+	justify-content: center; 
+	padding: 10px 50px 10px 50px;
+}
+
+.highlight{
+	background-color: yellow; 
+}
+
+@media screen and (max-width: 600px) {
+
+	h1 {
+		padding: 0px;
+		margin: 0px;
+	}
+		
+	#keyPicture{
+	height: 50px;
+	width: 50px;
+	}
+
+	.alphabetTable{
+		padding: 5px 10px 5px 10px;
+	}
+	
+	.wrapperCodeKnacker{
+		text-align: center;
+		margin-left: 0%;
+		margin-right: 0%;
+	}
+}
+
+.alphabetCell{
+	text-align: center;
+	width: 75px;
+	border: 5px solid var(--box-color-hover);
+	border-radius: 4px;
+	margin: 5px;
+}
+
+.plaintextLetter{
+	background-color: var(--navigation-main-color);
+	padding: 5px;
+	margin: 5px;
+	border-radius: 4px;
+	color: solid var(--box-color-hover);
+}
+
+.ciphretextLetter{
+	background-color: var(--box-color);
+	padding: 5px;
+	margin: 5px;
+}
+
+
+#substitution, #caesar{
+	display: none;
+}
+
+/******Caesar*******/
+
+.pngcontainer3{
+	background-image: url("/content/disk2.png");
+	background-size: 30vw 30vw;
+	background-repeat: no-repeat; 
+	background-position: center;
+}
+
+.inputCaesarSlice{
+	text-align: center;
+	position: relative;
+	margin: 0 auto;
+}
+
+#disk1{
+	width: 30vw;
+	height: 30vw;
+}
+
+@media screen and (max-width: 600px) {
+	.pngcontainer3{
+		background-image: url("/content/disk2.png");
+		background-repeat: no-repeat; 
+		background-position: center;
+		background-size: 50vw 50vw;
+	}
+	#disk1{
+		width: 50vw;
+		height: 50vw;
+		
+	}
+}
+
+
+/**************third row - OUTPUT*********************/ 
+.containerCodeKnacker4{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap; 
+	align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+	.containerCodeKnacker4{
+		justify-content: center;
+		}
+	}
+
+.itemCodeKnacker4-1 {
+	margin: 10px;
+	background: var(--box-color);
+	padding: 20px;
+	border: 5px solid var(--box-color-hover);
+    border-radius: 5px;
+    min-height: 120px;
+    width: 350px;
+    flex-grow: 1;
+}
+
+.itemCodeKnacker4-1 a{
+	overflow: auto;
+}
+
+
+
+/**************forth row - CHART*********************/  
+
+.chartContainer{
+	width: 100ev;
+	overflow: scroll;
+}
+
+.chartItem{
+	margin: 10px;
+	background: var(--box-color);
+	padding: 20px;
+	border: 5px solid var(--box-color-hover);
+    border-radius: 5px;
+    text-align: center;
+    min-width: 500px;
+}
+
+#phrase, #phrase2 {
+	word-break: break-all;
+	width: 100%;
+}
+
+/*---------------------------------------------------------------------------------------------------
+												EXTRA for PRIMEFACE
+-----------------------------------------------------------------------------------------------------*/
+
+/*Inputswitches*/
+.ui-inputswitch-on, .ui-inputswitch-off{
+	background-color: white !important;
+	box-shadow: none !important;
+	color: var(--navigation-color-button-hover)  !important;
+	
+}
+
+.ui-inputswitch-handle {
+	background-color: var(--navigation-main-color)  !important;
+	box-shadow: none !important;
+}
+
+/*SelectOnemenu*/
+.ui-selectonemenu-label {
+	background-color:  white;
+}
+
+.ui-selectonemenu-items, .ui-selectonemenu {
+	background-color: var(--navigation-main-color);
+	}
+	
+.ui-selectonemenu .ui-selectonemenu-trigger {
+	background-color: var(--navigation-main-color);
+}
+
+.ui-selectonemenu-items:active{
+	background-color: white !important;
+}
+	
+/*Select buttons*/
+.ui-button.ui-state-active .ui-button-text, .ui-buttonset .ui-state-active .ui-button-text {
+		  	background-color: var(--navigation-main-color);
+		  	color: #F0EFEC !important;
+		}
+
+/*Tabs*/
+.ui-tabs-nav, .ui-tabs-nav, .ui-state {
+	background-color: white !important;
+	background-image: none !important; 
+	border-radius: 0px;
+}
+
+
+.ui-tabs-selected { 
+	background-color: white !important;
+	background-image: none !important; 
+}
+
+/*Buttons */
+.my-button{
+	background-color: white !important;
+	border-color: #272f3c;
+	border-width: 2px;
+	border-radius: 25px;
+	border-color: var(--navigation-main-color) !important;
+	color: var(--navigation-color-button-hover)  !important;
+}
+
+.my-LinkButton{
+	padding: 2.5px;
+	margin: 2.5px;
+	width: 240px;
+}
+
+.ui-button:hover{
+	background-color: var(--navigation-color-button-hover) !important;
+	box-shadow: none !important;
+	color: var(--navigation-color-button-hover)  !important;
+}
+
+/*Dialogs*/
+.ui-dialog-titlebar{
+	background-color: var(--navigation-main-color);
+	border-color: var(--navigation-main-color) !important;
+}
+
+/* The Overlay (background) */
+.overlay {  
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  background-color: rgba(255,255,255, 0.93);
+  z-index: 1; 
+  display: none;
+}
+
+.overlay-content{
+	padding: 20px 70px 20px 70px; 
+	height: 90%; 
+	overflow-y: scroll; 
+}
+
+@media screen and (max-width: 600px) {
+
+	.overlay {
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		background-color: rgba(255,255,255, 0.93);
+		z-index: 1;
+		display: none;
+	}
+
+	.overlay-content{
+	padding: 10px; 
+	height: 90%; 
+	overflow: scroll; 
+		}
+	}
+	
+.slider {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  overflow-x: auto;
+}
+.slide {
+  width: 300px;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+/*Information Button*/
+
+.infoButton{
+	background-color: rgba(143,193,227,0.9);
+	padding-left: 12px;
+	padding-right: 12px;
+	border-radius: 25px;
+}
